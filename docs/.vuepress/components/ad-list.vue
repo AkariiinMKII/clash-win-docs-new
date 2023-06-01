@@ -20,11 +20,11 @@ export default {
           img: "https://download.fastlink.digital/fastlink_banner.jpg",
         },
         {
-          url: "https://speedcat-aff.com/auth/register?code=gYgD",
-          img: "https://speedcat.co/speedcat-banner.jpg",
+          url: "https://clash01.youbbv.com/auth/register?code=gYgD",
+          img: "https://clash01.youbbv.com/speedcat-banner.jpg",
         },
         {
-          url: "https://jkcloud.net",
+          url: "https://jk-cloud.net",
           img: "https://sadwadhoa.oss-cn-shanghai.aliyuncs.com/ad.jpg",
         },
       ],

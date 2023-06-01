@@ -141,6 +141,24 @@ parsers:
     file: "C:/Users/cfw/parser.js"
 ```
 
+::: tip
+使用文件时，允许调用该文件目录下的 node_modules 模块
+:::
+
+版本 0.20.10 开始支持从远端获取
+
+```yaml
+parsers:
+  - url: https://example.com/profile.yaml
+    remote:
+      url: https://gist.githubusercontent.com/Fndroid/40e6117252f794aa629b875aa1ecadea/raw/d1ba6d230746c9d2ecfbef211c52fd9a567a781e/parser.js
+      cache: true # 默认为false，指示是否对重复下载此预处理代码使用缓存
+```
+
+::: danger 注意
+使用远端配置请选择可信的代码提供者，如不能信任代码提供者，可以从远端拷贝代码然后使用`code`填入而非使用`remote`方式引入！
+:::
+
 ### 参数说明
 
 CFW 调用用户定义的`parse`方法时，会传入 3 个参数，分别是**配置文件文本内容**，**工具类对象/方法**以及**配置文件元数据**
@@ -189,7 +207,7 @@ raw 是一个字符串，一般需要用 yaml 库解析成 JavaScript 对象
 
 ```yaml
 parsers:
-  - reg: https://test.com.+$ # 正则匹配域名
+  - reg: ^https://test\.com/.+$ # 正则匹配域名
     yaml:
       prepend-rules:
         - DOMAIN,test.com,DIRECT
@@ -237,7 +255,7 @@ file 同时支持 yaml 及 js 格式的文件
 
 ```yaml
 parsers: # array
-  - reg: 'myprofile.yml'
+  - reg: "myprofile.yml"
     code: |
       module.exports.parse = async (raw, { axios, yaml, notify, console }) => {
         raw = raw.replace(/# upload=\d*; download=\d*; total=\d*; expire=\d*;*\n/gm,'')
