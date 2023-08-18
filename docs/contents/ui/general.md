@@ -7,7 +7,7 @@
 ## 选项说明
 
 - Port：Mixed（HTTP/HTTPS/SOCKS4/SOCKS4a/SOCKS5）代理端口
-- Allow LAN：是否允许来自 LAN IP 地址的连接
+- Allow LAN：是否允许局域网代理
   - 网络图标：显示网卡信息
 - Log Level：Clash 核心日志等级
 - IPV6: 是否启用 IPV6
